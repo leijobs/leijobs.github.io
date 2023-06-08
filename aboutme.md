@@ -1,16 +1,24 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: I'm one of the crowd
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is HoHo, a passionate person, enjoying my life even though it's not so beautiful. I have the following qualities:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- I'm extremely loyal to You, ZY.
+- I'm interested in both nature and science, automobile and robotics especially. 
 
 What else do you need?
 
 ### My story
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+En, I'm a kind of small-town swot, comes from China. I got B.S degree in vehicle engineering from Wuhan University of Technology in 2020, and then I got M.S degree in vehicle engineering from Dalian University of Technology in 2023, then I got a mediocre job as sensor fusion engineer, and luckily, I love it.
+
+### My Interest
+
+I Can't even call it research due to my poor technical skills, but I'd like to share with you.
+
+ - Advanced Driving Assist System (ADAS) or Autonomous Driving.
+ - Robotics dynamics and kinectics or something.
+ - Basic economics and natural sciences, provided they are not too sophisticated.
