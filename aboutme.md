@@ -17,7 +17,7 @@ En, I'm a kind of small-town swot, comes from China. I got B.S degree in vehicle
 
 ### My Interest
 
-I Can't even call it research due to my poor technical skills, but I'd like to share with you.
+I can't even call it research due to my poor technical skills, but I'd like to share with you.
 
  - Advanced Driving Assist System (ADAS) or Autonomous Driving.
  - Robotics dynamics and kinectics or something.
