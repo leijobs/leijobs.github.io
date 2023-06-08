@@ -14,7 +14,7 @@ What else do you need?
 
 ### My story
 
-En, to some degrees, I'm a kind of small-town swot, comes from China. Here is my education background as fellows:
+En, to some degrees, I'm a kind of small-town swot, comes from China. Here is my education background as follows:
 
 - 2023.6 ~ till now: Sensor Fusion Engineer, ADAS Company;
 - 2020.9 ~ 2023.6: Master, Vehicle engineering, Dalian University of Technology;
