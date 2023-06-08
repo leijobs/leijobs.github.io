@@ -22,12 +22,16 @@ author: You and Ho
 navbar-links:
   Home: "https://leijobs.github.io"
   About Me: "aboutme"
-  Projects: "https://leijobs.github.io"
+  Projects: "/_posts/Projects/"
   Tags:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Categories:
-  Archives:
+    - Percection : "https://beautifuljekyll.com"
+    - Control : "https://beautifuljekyll.com"
+    - Planning : "https://beautifuljekyll.com"
+    - Communication : "https://beautifuljekyll.com"
+    - Deployment : "https://www.markdowntutorial.com/"
+    - Others : "https://beautifuljekyll.com"
+  Categories: "/_posts/Catergories/"
+  Archives: "/_posts/Archives/"
   Search: "https://deanattali.com"
 
 ################
