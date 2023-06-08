@@ -16,11 +16,9 @@ What else do you need?
 
 En, to some degrees, I'm a kind of small-town swot, comes from China. Here is my education background as fellows:
 
-|     time  |       speciality      |         title          |            institute           |
-|    :--:   |      :--:             |         :--:           |               :--:             |
-| 2016-2020 | Vehicle engineering   | Bachelor               | Wuhan University of Technology |
-| 2020-2023 | Vehicle engineering   | Master                 | Dalian University of Technology |
-| till now  |                       | Sensor fusion engineer | ADAS Company |
+- 2023.6 ~ till now: Sensor Fusion Engineer, ADAS Company;
+- 2020.9 ~ 2023.6: Master, Vehicle engineering, Dalian University of Technology;
+- 2016.9 ~ 2020.6: Bachelor, Vehicle engineering, Wuhan University of Technology;
 
 ### My Interest
 
