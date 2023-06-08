@@ -16,9 +16,9 @@ What else do you need?
 
 En, to some degrees, I'm a kind of small-town swot, comes from China. Here is my education background as fellows:
 
-- 2016-2020 B.S degree vehicle engineering  Wuhan University of Technology;
-- 2020-2023 M.S degree vehicle engineering  Dalian University of Technology;
-- till now  Sensor fusion engineer          ADAS Company.
+- 2016-2020 | B.S degree | vehicle engineering | Wuhan University of Technology;
+- 2020-2023 | M.S degree | vehicle engineering | Dalian University of Technology;
+- till now  | Sensor fusion engineer           | ADAS Company.
 
 ### My Interest
 
