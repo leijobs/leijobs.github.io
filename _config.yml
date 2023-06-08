@@ -22,6 +22,7 @@ author: You and Ho
 navbar-links:
   Home: "https://leijobs.github.io"
   About Me: "aboutme"
+  Projects: "https://leijobs.github.io"
   Tags:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
