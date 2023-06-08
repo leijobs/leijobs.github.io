@@ -20,11 +20,14 @@ author: You and Ho
 ###############################################
 
 navbar-links:
+  Home: "https://leijobs.github.io"
   About Me: "aboutme"
-  Resources:
+  Tags:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  Categories:
+  Archives:
+  Search: "https://deanattali.com"
 
 ################
 # --- Logo --- #
