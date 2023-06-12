@@ -23,6 +23,7 @@ navbar-links:
   Home: "https://leijobs.github.io"
   About Me: "aboutme"
   Projects: "/_posts/Projects/"
+  Notes: "/_posts/Notes/"
   Archives: "/_posts/Archives/"
   Tags:
     - Percection : "https://beautifuljekyll.com"
