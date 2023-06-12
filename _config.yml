@@ -22,9 +22,9 @@ author: HoHoZY
 navbar-links:
   Home: "https://leijobs.github.io"
   About Me: "aboutme"
-  Projects: "/_posts/Projects/"
-  Notes: "/_posts/Notes/"
-  Archives: "/_posts/Archives/"
+  Projects: "projects"
+  Notes: "notes"
+  Archives: "archives"
   Tags:
     - Percection : "https://beautifuljekyll.com"
     - Control : "https://beautifuljekyll.com"
