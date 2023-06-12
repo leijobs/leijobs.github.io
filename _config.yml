@@ -13,7 +13,7 @@
 title: HoHoZYDreams website
 
 # Your name to show in the footer
-author: You and Ho
+author: HoHoZY
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -30,7 +30,6 @@ navbar-links:
     - Communication : "https://beautifuljekyll.com"
     - Deployment : "https://www.markdowntutorial.com/"
     - Others : "https://beautifuljekyll.com"
-  Categories: "/_posts/Catergories/"
   Archives: "/_posts/Archives/"
   Search: "https://deanattali.com"
 
