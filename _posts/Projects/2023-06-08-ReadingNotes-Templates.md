@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sample blog post
+title: Percepion project sample test
 subtitle: Each post also has a subtitle
 tags: [perception]
 comments: true
