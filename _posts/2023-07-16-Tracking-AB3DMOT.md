@@ -1,10 +1,10 @@
+<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ---
 layout: post
 title: 3D多目标跟踪算法--AB3DMOT（理论篇）
 tags: tracking
 ---
 
-<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 #  AB3DMOT: A Baseline for 3D Multi-Object Tracking and New Evaluation Metrics
 
