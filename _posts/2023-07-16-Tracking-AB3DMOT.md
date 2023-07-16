@@ -57,7 +57,7 @@ tags: tracking
 
 主要流程如下图所示：
 
-![image-20230716172844563](D:\Projects\WorkingLearningPlan\ReadingNotes\AB3DMOT\image-20230716172844563.png)
+![image-20230716172844563](..\assets\post_assets\image-20230716172844563.png)
 
 * A.目标检测：通过激光雷达检测算法获得`3D`目标检测结果($D_t$)
 * B.轨迹预测：`3D`卡尔曼滤波根据前一帧轨迹信息($T_{-1}$)预测出当前目标位置($T_{est}$)
@@ -149,9 +149,9 @@ $$
 
 ### 性能表现
 
-![image-20230716201457936](D:\Projects\WorkingLearningPlan\ReadingNotes\AB3DMOT\image-20230716201457936.png)
+![image-20230716201457936](..\assets\post_assets\image-20230716201457936.png)
 
-<img src="D:\Projects\WorkingLearningPlan\ReadingNotes\AB3DMOT\image-20230716201519205.png" alt="image-20230716201519205" style="zoom: 67%;" /><img src="D:\Projects\WorkingLearningPlan\ReadingNotes\AB3DMOT\image-20230716201549988.png" alt="image-20230716201549988" style="zoom: 67%;" />
+<img src="..\assets\post_assets..\assets\post_assets\image-20230716201519205.png" alt="image-20230716201519205" style="zoom: 67%;" /><img src="..\assets\post_assets\image-20230716201549988.png" alt="image-20230716201549988" style="zoom: 67%;" />
 
 * KITTI：
   * Car：`SOTA`
@@ -161,7 +161,7 @@ $$
 
 ### 消融实验
 
-![image-20230716201418348](D:\Projects\WorkingLearningPlan\ReadingNotes\AB3DMOT\image-20230716201418348.png)
+![image-20230716201418348](..\assets\post_assets\image-20230716201418348.png)
 
 * `3D`检测算法性能：激光雷达检测算法优于视觉检测算法，即算法检测结果作为输入对于`3D MOT`任务非常重要
 * `3D Karman` vs `2D Karman`：`3D Karman`相对更有，可能原因为其在深度预测上的准确度更高
