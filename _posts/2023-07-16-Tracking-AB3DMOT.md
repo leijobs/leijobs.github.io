@@ -7,6 +7,8 @@ tags: tracking
 
 #  AB3DMOT: A Baseline for 3D Multi-Object Tracking and New Evaluation Metrics
 
+> `2D`多目标的匹配和跟踪往往基于卡尔曼滤波+匈牙利匹配，或者`KCF`等算法；而现在`3D`目标感知如火如荼，因此想在学习`3D`目标跟踪的同时，复习一遍`2D`目标跟踪。
+
 ```
 文章信息
 作者：Xinshuo Weng, Jianren Wang, David Held, and Kris Kitani
@@ -20,15 +22,10 @@ tags: tracking
 
 
 
-> 便签：`2D`多目标的匹配和跟踪往往基于卡尔曼滤波+匈牙利匹配，或者`KCF`等算法；而现在`3D`目标感知如火如荼，因此想在学习`3D`目标跟踪的同时，复习一遍`2D`目标跟踪。
-
-
-
 ## 主要贡献
 
 - [x] 实时精确的、基于`3D`卡尔曼滤波的`3D`目标跟踪
 - [x] 提供了用于`3D`目标跟踪的性能评价工作和三项评价指标
-
 - [x] 在`3D`目标跟踪数据集上实现性能`SOTA`以及最快运行速度
 
 
