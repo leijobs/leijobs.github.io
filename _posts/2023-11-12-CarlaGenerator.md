@@ -1,3 +1,9 @@
+---
+layout: post
+title: Carla GroundTruth Data Generator
+tags: Simulator
+---
+
 # Carla-DataGenerator Project
 Hello, guys, how time flies!
 
