@@ -25,12 +25,6 @@ navbar-links:
   Projects: "projects"
   Blogs: "blogs"
   Tags:
-    - DeepLearning : "/tags#deeplearning"
-    - BEV&Transformer : "/tags#bev"
-    - OccupancyNet : "/tags#occupancy"
-    - SLAM : "/tags#slam"
-    - Framework : "/tags#framework"
-    - Others : "/tags#others"
   Search: "#"
 
 ################
