@@ -26,11 +26,11 @@ navbar-links:
   Blogs: "blogs"
   Archives: "archives"
   Tags:
-    - Percection : "/tags#perception"
-    - Control : "/tags#control"
-    - Planning : "/tags#planning"
-    - Communication : "/tags#communication"
-    - Deployment : "/tags#deployment"
+    - DeepLearning : "/tags#deeplearning"
+    - BEV&Transformer : "/tags#bev"
+    - OccupancyNet : "/tags#occupancy"
+    - SLAM : "/tags#slam"
+    - Framework : "/tags#framework"
     - Others : "/tags#others"
   Search: "#"
 
