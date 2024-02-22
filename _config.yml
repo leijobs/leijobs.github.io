@@ -24,7 +24,10 @@ navbar-links:
   About Me: "aboutme"
   Projects: "projects"
   Blogs: "blogs"
-  Tags:
+  Tags: 
+    - Percection : "/tags#perception"
+    - Slam : "/tags#slam"
+    - Others : "/tags#others"
   Search: "#"
 
 ################
