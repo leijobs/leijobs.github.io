@@ -24,7 +24,6 @@ navbar-links:
   About Me: "aboutme"
   Projects: "projects"
   Blogs: "blogs"
-  Archives: "archives"
   Tags:
     - DeepLearning : "/tags#deeplearning"
     - BEV&Transformer : "/tags#bev"
