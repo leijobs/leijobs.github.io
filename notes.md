@@ -3,23 +3,23 @@ layout: page
 title: Notes
 ---
 
-## Perception
+## Deep Learning
 
 to add perception contents at here
 
-## Control
+## BEV&Transformer
 
 to add perception contents at here
 
-## Planning
+## OccupancyNets
 
 to add perception contents at here
 
-## Communication
+## SLAM
 
 to add perception contents at here
 
-## Deployment
+## Frameworks
 
 to add perception contents at here
 
