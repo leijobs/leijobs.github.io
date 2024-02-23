@@ -28,7 +28,6 @@ navbar-links:
     - Percection : "/tags#perception"
     - Slam : "/tags#slam"
     - Others : "/tags#others"
-  Search: "#"
 
 ################
 # --- Logo --- #
