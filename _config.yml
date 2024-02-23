@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: HoHoZYDreams website
+title: HoHoZYDreams
 
 # Your name to show in the footer
 author: HoHoZY
@@ -28,7 +28,6 @@ navbar-links:
     - Percection : "/tags#perception"
     - Slam : "/tags#slam"
     - Others : "/tags#others"
-  Search: "#"
 
 ################
 # --- Logo --- #
