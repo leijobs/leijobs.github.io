@@ -1,3 +1,9 @@
+---
+layout: post
+title: MonoScene
+tags: OccNets
+---
+
 # 01_MonoScene
 
 ## Info
@@ -131,7 +137,7 @@ $$
 
 FPL（视锥比例 loss）：用于显式的优化 frustum 中类别分布
 
-如图 6 所示，并不是直接优化 frustum 分布，而是把图像划分为$l \times l$个相同的块，对于每个块使用视锥损失
+xxxxxxxxxx |-- configs|   |-- 3dssd|   |-- _base_|   |-- benchmark|   |-- centerpoint|   |-- dynamic_voxelization|   |-- fastbev|   |-- fcos3d|   |-- fp16|   |-- free_anchor|   |-- groupfree3d|   |-- h3dnet|   |-- imvotenet|   |-- imvoxelnet|   |-- m2bev|   |-- mvxnet|   |-- nuimages|   |-- paconv|   |-- parta2|   |-- pointnet2|   |-- pointpillars|   |-- regnet|   |-- second|   |-- ssn|   `-- votenet|-- mmcv_custom|   |-- checkpoint.py|   |-- cpp_extension.py|   |-- multi_scale_deform_attn.py|   `-- remove.sh|-- mmdet3d|-- script|   `-- view_tranform_cuda|-- setup.cfg|-- setup.py`-- tools    |-- __init__.py    |-- analysis_tools    |-- convert_ckp.py    |-- create_data.py    |-- create_data.sh    |-- data_converter    |-- eval.py    |-- fastbev_run.sh    |-- misc    |-- model_converters    |-- slurm_analysis.sh    |-- slurm_eval.sh    |-- slurm_test.sh    |-- slurm_train.sh    |-- slurm_vis.sh    |-- test.py    `-- train.pybash
 
 直觉上，视锥分布是有规律的，比如 occluded 的车辆可能分布于道路周边
 

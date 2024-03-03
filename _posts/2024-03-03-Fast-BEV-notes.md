@@ -1,3 +1,9 @@
+---
+layout: post
+title: Fast-BEV
+tags: BEV, Perception
+---
+
 # 02_FAST-BEV
 
 ## Info

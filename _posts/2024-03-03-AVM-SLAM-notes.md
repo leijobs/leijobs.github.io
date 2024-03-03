@@ -1,3 +1,9 @@
+---
+layout: post
+title: AVM-SLAM
+tags: SLAM, AVP
+---
+
 # 02_AVM-SLAM
 
 ## Info
