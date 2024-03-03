@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fast-BEV
-cover-img: /assets/static/S4OXbf6t8oDAlYxGoePcJo98nLb.png
+thumbnail-img: /assets/static/S4OXbf6t8oDAlYxGoePcJo98nLb.png
 tags: BEV Perception Multi-view
 ---
 

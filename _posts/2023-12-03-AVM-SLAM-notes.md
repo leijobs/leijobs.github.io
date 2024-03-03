@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AVM-SLAM
-cover-img: /assets/static/FOhlbyptzoWXVJxlq9Dcb4vGnGb.png
+thumbnail-img: /assets/static/FOhlbyptzoWXVJxlq9Dcb4vGnGb.png
 tags: SLAM AVP
 ---
 

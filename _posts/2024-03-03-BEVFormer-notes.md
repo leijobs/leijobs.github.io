@@ -1,7 +1,7 @@
 ---
 layout: post
 title: BEVFormer
-cover-img: /assets/static/C9nYbwLbMoX5Epx4j2Gcxw00nOg.png
+thumbnail-img: /assets/static/C9nYbwLbMoX5Epx4j2Gcxw00nOg.png
 tags: BEV Transformer Perception Multi-view
 ---
 

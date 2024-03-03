@@ -1,7 +1,7 @@
 ---
 layout: post
 title: StereoRecon--ELAS
-cover-img: /assets/post_assets/image-elas-20231112-1.png
+thumbnail-img: /assets/post_assets/image-elas-20231112-1.png
 tags: Recon
 ---
 
