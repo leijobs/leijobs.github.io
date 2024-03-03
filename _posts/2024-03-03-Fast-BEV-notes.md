@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fast-BEV
-tags: BEV, Perception
+tags: BEV Perception Multi-view
 ---
 
 # 02_FAST-BEV

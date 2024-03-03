@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MonoScene
-tags: OccNets
+tags: OccNets Mono-View
 ---
 
 # 01_MonoScene

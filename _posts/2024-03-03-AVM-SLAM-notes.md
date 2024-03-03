@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AVM-SLAM
-tags: SLAM, AVP
+tags: SLAM AVP
 ---
 
 # 02_AVM-SLAM

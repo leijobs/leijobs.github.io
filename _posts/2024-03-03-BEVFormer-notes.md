@@ -1,7 +1,7 @@
 ---
 layout: post
 title: BEVFormer
-tags: BEV, Transformer, Perception
+tags: BEV Transformer Perception Multi-view
 ---
 
 # 01_BEVFormer
