@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 3D多目标跟踪算法--AB3DMOT（理论篇）
+cover-img: /assets/post_assets/image-20230716172844563.png
 tags: tracking
 ---
 
