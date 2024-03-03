@@ -9,7 +9,7 @@
 
 ### Model Framework
 
-![](static/YzNmbwez1oySHtxkZ7ycowPuntj.png)
+![](../assets/static/YzNmbwez1oySHtxkZ7ycowPuntj.png)
 
 - 流程：
   - 1.2D UNet:多尺度的特征提取
@@ -38,7 +38,7 @@
 
 #### FLoSP
 
-![](static/Kl2LbAJj3oAp3hx6mdlcdw14nKb.png)
+![](../assets/static/Kl2LbAJj3oAp3hx6mdlcdw14nKb.png)
 
 假定相机内参 K 已知，将 3D voxels 的中心点 ($
 x^{c}$)投影到 2D，并从 2D Decoder 输出的 feature map 结果进行采样，在 1-2-4-8 的尺度上重复此过程：
@@ -61,7 +61,7 @@ FOV 以外的特征向量都置 0，$F_{3D}$即为 3D UNet 的输入
 
 语义场景补全(SSC)一般设置的 n=2 是次优的，作者设置 n=4 来描述 voxel 间的关系如下：
 
-![](static/YVWDb1DA6oz8y6xS9UJcmi5DnBh.png)
+![](../assets/static/YVWDb1DA6oz8y6xS9UJcmi5DnBh.png)
 
 如图(a)，作者采用以下表示来对 voxel 间的 free 和 occupied 进行描述：
 
@@ -89,7 +89,7 @@ $$
 
 $n=\left| M \right|$的多个矩阵，维度为$HWD\times\frac{HWD}{s^3}$
 
-![](static/ZzaEb1wNTow7K3xvwr5ctZkanqb.png)
+![](../assets/static/ZzaEb1wNTow7K3xvwr5ctZkanqb.png)
 
 每个$\hat{A}^m$矩阵都会对一段数据进行编码，满足$m \in M$，通过真值$A^m$监督
 
@@ -135,7 +135,7 @@ FPL（视锥比例 loss）：用于显式的优化 frustum 中类别分布
 
 直觉上，视锥分布是有规律的，比如 occluded 的车辆可能分布于道路周边
 
-![](static/DmGib73o0o1cxXxeFDYcu0v9nVm.png)
+![](../assets/static/DmGib73o0o1cxXxeFDYcu0v9nVm.png)
 
 给定一个视锥$f$，首先计算视锥类别分布的真值，对于体素$k$为$P_k$；对于体素$k$的类别$c$的比例真值为
 

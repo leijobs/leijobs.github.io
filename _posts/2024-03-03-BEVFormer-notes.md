@@ -47,7 +47,7 @@ $$
 - query：通过注意力机制从多视图 BEV 空间中提取特征
 - spatial cross-attn、temporal self-attn：查找和汇聚 BEV 时空特征
 
-![](static/C9nYbwLbMoX5Epx4j2Gcxw00nOg.png)
+![](../assets/static/C9nYbwLbMoX5Epx4j2Gcxw00nOg.png)
 
 在推理时，假设时刻为$t$，先将多视图图像输入 backbone 网络，比如 ResNet101 提取多视图的特征$F_t=\left\{F_t^i \right\}_{i=1}^{N_{view}}$，其中$F_t^i$表示第 i 个视图的特征，$N_{view}$表示视图的总个数
 
@@ -63,7 +63,7 @@ $$
 
 BEVFormer 引入了 3D 的 deformable Attn 来解决全局 Attn 导致的计算复杂度问题，并将原来的 deformable2D 改为 3D
 
-![](static/HqTPb364oonOenxAM1wcBDUWnVf.png)
+![](../assets/static/HqTPb364oonOenxAM1wcBDUWnVf.png)
 
 1. 首先先将 BEV 特征 lift 为 pillar-like 的 query，再从 pillar 中采样 $N_{ref}$3D 参考点
 2. 将这些点投影到 2D 视图；但是一个视图只能填充部分 BEV query，被填充的部分为$\mathcal{V}_{hit}$
@@ -102,7 +102,7 @@ $$
 
 Temporal 信息对于运动目标速度估计、遮挡目标等方面具有较大作用
 
-![](static/Dei3bOcz7ok4NdxpkEYcf6honxL.png)
+![](../assets/static/Dei3bOcz7ok4NdxpkEYcf6honxL.png)
 
 给定当前时刻$t$的 BEV query $Q$以及上一历史时刻$t-1$的 BEV 特征$B_{t-1}$，
 
