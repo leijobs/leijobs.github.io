@@ -9,6 +9,7 @@ tags: SLAM AVP
 ## Info
 
 > 论文：[https://arxiv.org/abs/2309.08180](https://arxiv.org/abs/2309.08180)
+>
 > github：[https://github.com/yale-cv/avm-slam](https://github.com/yale-cv/avm-slam)【没有 data 和 code】
 
 - 创新点：

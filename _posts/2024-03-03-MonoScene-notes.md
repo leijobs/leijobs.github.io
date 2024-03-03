@@ -9,6 +9,7 @@ tags: OccNets Mono-View
 ## Info
 
 > 论文：[https://arxiv.org/abs/2112.00726](https://arxiv.org/abs/2112.00726)
+>
 > github：[https://github.com/astra-vision/MonoScene](https://github.com/astra-vision/MonoScene)
 
 ## Framework
@@ -91,9 +92,7 @@ $$
 
 ##### 3D CRP Layer
 
-3D CRP 层以 HxWxD 的 3D feature map 为输入，并就行一系列 ASPP 卷积来放大感受野，然后分解为数量为
-
-$n=\left| M \right|$的多个矩阵，维度为$HWD\times\frac{HWD}{s^3}$
+3D CRP 层以 HxWxD 的 3D feature map 为输入，并就行一系列 ASPP 卷积来放大感受野，然后分解为数量为 $n=\left| M \right|$的多个矩阵，维度为 $HWD\times\frac{HWD}{s^3}$
 
 ![](../assets/static/ZzaEb1wNTow7K3xvwr5ctZkanqb.png)
 
@@ -116,13 +115,11 @@ $$
 SCA loss 直接优化场景和类别的 loss. 其中，类别 loss 可以分别用$P_c$（Precision，精度）,$R_c$（Recall，召回率）,$S_c$（Specificity，特异性）描述，其中前两者用于衡量相同相似的 voxel，后者用于衡量不同的 voxel（比如类别不同）. 定义$p_i$为体素 i 的真值，$\hat{p}_{i,c}$为相同 voxel 对于类别$c$的预测值，那么：
 
 $$
-\begin{array}{l}
 \begin{aligned}
-P_{c}(\hat{p}, p) & =\log \frac{\sum_{i} \hat{p}_{i, c} \llbracket p_{i}=c \rrbracket}{\sum_{i} \hat{p}_{i, c}}, \\
-R_{c}(\hat{p}, p) & =\log \frac{\sum_{i} \hat{p}_{i, c} \llbracket p_{i}=c \rrbracket}{\sum_{i} \llbracket p_{i}=c \rrbracket} \\
-S_{c}(\hat{p}, p) & =\log \frac{\sum_{i}\left(1-\hat{p}_{i, c}\right)\left(1-\llbracket p_{i}=c \rrbracket\right)}{\sum_{i}\left(1-\llbracket p_{i}=c \rrbracket\right)}
-\end{aligned}\\
-\end{array}
+&P_c(\hat{p},p) \begin{aligned}=\log\frac{\sum_i\hat{p}_{i,c}[p_i=c]}{\sum_i\hat{p}_{i,c}},\end{aligned}  \\
+&R_c(\hat{p},p) =\log\frac{\sum_i\hat{p}_{i,c}[p_i=c]}{\sum_i[p_i=c]},  \\
+&S_c(\hat{p},p) \begin{aligned}=\log\frac{\sum_i(1-\hat{p}_{i,c})(1-[[p_i=c]])}{\sum_i(1-[[p_i=c]])}\end{aligned} 
+\end{aligned}
 $$
 
 其中，$\llbracket * \rrbracket$表示 Iverson 括号. 最终的 Loss 如下：
@@ -136,8 +133,6 @@ $$
 ##### Frustum loss
 
 FPL（视锥比例 loss）：用于显式的优化 frustum 中类别分布
-
-xxxxxxxxxx |-- configs|   |-- 3dssd|   |-- _base_|   |-- benchmark|   |-- centerpoint|   |-- dynamic_voxelization|   |-- fastbev|   |-- fcos3d|   |-- fp16|   |-- free_anchor|   |-- groupfree3d|   |-- h3dnet|   |-- imvotenet|   |-- imvoxelnet|   |-- m2bev|   |-- mvxnet|   |-- nuimages|   |-- paconv|   |-- parta2|   |-- pointnet2|   |-- pointpillars|   |-- regnet|   |-- second|   |-- ssn|   `-- votenet|-- mmcv_custom|   |-- checkpoint.py|   |-- cpp_extension.py|   |-- multi_scale_deform_attn.py|   `-- remove.sh|-- mmdet3d|-- script|   `-- view_tranform_cuda|-- setup.cfg|-- setup.py`-- tools    |-- __init__.py    |-- analysis_tools    |-- convert_ckp.py    |-- create_data.py    |-- create_data.sh    |-- data_converter    |-- eval.py    |-- fastbev_run.sh    |-- misc    |-- model_converters    |-- slurm_analysis.sh    |-- slurm_eval.sh    |-- slurm_test.sh    |-- slurm_train.sh    |-- slurm_vis.sh    |-- test.py    `-- train.pybash
 
 直觉上，视锥分布是有规律的，比如 occluded 的车辆可能分布于道路周边
 

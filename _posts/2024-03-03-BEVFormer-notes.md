@@ -9,6 +9,7 @@ tags: BEV Transformer Perception Multi-view
 ## Info
 
 > 论文：[https://arxiv.org/abs/2203.17270](https://arxiv.org/abs/2203.17270)
+>
 > github：[https://github.com/fundamentalvision/BEVFormer](https://github.com/fundamentalvision/BEVFormer)
 
 ## Framework
@@ -32,7 +33,7 @@ $$
 \operatorname{DeformAttn}(q, p, x)=\sum_{i=1}^{N_{\text {head }}} \mathcal{W}_{i} \sum_{j=1}^{N_{\text {key }}} \mathcal{A}_{i j} \cdot \mathcal{W}_{i}^{\prime} x\left(p+\Delta p_{i j}\right)
 $$
 
-其中，q，p，x 分别表示 query，参考点（key）和输入特征（value）；i 代表 attn head，$N_{head}$表示全部的 attn head；j 代表采样的 key，$N_{key}$表示所有 attn head 对应的 key 的集合；$\mathcal{W}_{i} \in \mathcal{R^{C \times (C / H_{head})}}、\mathcal{W}_{i}^{\prime} \in \mathcal{R^{(C / H_{head}) \times C}}$表示可学习的权重，而表示特征维度；$\mathcal{A}_{i j} \in [0,1]$表示预测的 attn 权重，并通过$\sum_{i=1}^{N_{\text {head }}}\mathcal{A}_{i j} = 1$归一化；$\Delta p_{i j} \in \mathcal{R}^2$表示相对于参考点 p 的预测的 offset，$x\left(p+\Delta p_{i j}\right)$表示位于$(p+\Delta p_{i j})$处的特征，通过双线性插值得到
+其中，q，p，x 分别表示 query，参考点（key）和输入特征（value）；i 代表 attn head，$N_{head}$表示全部的 attn head；j 代表采样的 key，$N_{key}$表示所有 attn head 对应的 key 的集合； $\mathcal{W}_{i} \in \mathcal{R^{C \times (C / H_{head})}}、 \mathcal{W}_{i}^{\prime} \in \mathcal{R^{(C / H_{head}) \times C}}$ 表示可学习的权重，而表示特征维度； $\mathcal{A}_{i j} \in [0,1]$ 表示预测的 attn 权重，并通过 $\sum_{i=1}^{N_{\text {head }}}\mathcal{A}_{i j} = 1$ 归一化；$\Delta p_{i j} \in \mathcal{R}^2$表示相对于参考点 p 的预测的 offset， $x\left(p+\Delta p_{i j}\right)$ 表示位于 $(p+\Delta p_{i j})$ 处的特征，通过双线性插值得到
 
 论文将把 deformable 注意力扩展到 3D 领域，用于时空特征融合
 
@@ -63,7 +64,7 @@ $$
 
 #### Query
 
-首先预先定义一组网格参数$Q \in \mathcal{R}^{H \times W \times C}$作为 BEVFormer 的 query，$H、W$为 BEV 平面的空间尺度；特殊的，query $Q_p \in \mathcal{R}^{1 \times C}$表示位于 BEV 网格$p=(x,y)$处的 query，每个网格都与真实世界的位置按照单位 m 来对应，因此多视图 BEV 中心特征即为自车位置
+首先预先定义一组网格参数 $Q \in \mathcal{R}^{H \times W \times C}$ 作为 BEVFormer 的 query，$H、W$为 BEV 平面的空间尺度；特殊的，query $Q_p \in \mathcal{R}^{1 \times C}$表示位于 BEV 网格$p=(x,y)$处的 query，每个网格都与真实世界的位置按照单位 m 来对应，因此多视图 BEV 中心特征即为自车位置
 
 #### Spatial cross-attn
 
