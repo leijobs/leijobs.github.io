@@ -90,7 +90,7 @@ $$
 
 ##### 3D CRP Layer
 
-3D CRP 层以 HxWxD 的 3D feature map 为输入，并就行一系列 ASPP 卷积来放大感受野，然后分解为数量为 $n=| M |$的多个矩阵，维度为 $HWD\times\frac{HWD}{s^3}$
+3D CRP 层以 HxWxD 的 3D feature map 为输入，并就行一系列 ASPP 卷积来放大感受野，然后分解为数量为 $n=\lvert M \rvert $的多个矩阵，维度为 $HWD\times\frac{HWD}{s^3}$
 
 ![](../assets/static/ZzaEb1wNTow7K3xvwr5ctZkanqb.png)
 
