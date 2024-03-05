@@ -126,7 +126,7 @@ $$
 \mathcal{L}_{\text {scal }}(\hat{p}, p)=-\frac{1}{C} \sum^{C}\left(P_{c}(\hat{p}, p)+R_{c}(\hat{p}, p)+S_{c}(\hat{p}, p)\right)
 $$
 
-实际上，在计算中会分别优化语义 loss 函数 $L^{sem}_{scal}(\hat{y}, y)$，以及几何 loss 函数$L^{geo}_{scal}(\hat{y}, y)$
+实际上，在计算中会分别优化语义 loss 函数 $L^{sem}_{scal}(\hat{y}, y)$ ，以及几何 loss 函数  $L^{geo}_{scal}(\hat{y}, y) $
 
 ##### Frustum loss
 
