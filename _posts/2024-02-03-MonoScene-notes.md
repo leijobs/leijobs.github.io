@@ -51,7 +51,7 @@ tags: OccNets Mono-View
 假定相机内参 K 已知，将 3D voxels 的中心点 ($
 x^{c}$)投影到 2D，并从 2D Decoder 输出的 feature map 结果进行采样，在 1-2-4-8 的尺度上重复此过程：
 $$
-\mathrm{F}_{3 \mathrm{D}}=\sum_{s \in S} \Phi_{\rho\left(x^{\mathrm{c}}\right)}\left(\mathrm{F}_{2 \mathrm{D}}^{1: s}\right)
+\mathrm{F}_{3 \mathrm{D}}=\sum_{s \in S} \Phi_{\rho(x^{\mathrm{c}})}(\mathrm{F}_{2 \mathrm{D}}^{1: s})
 $$
 
 其中，$\phi_a(b)$代表在 a 坐标系下对 b 进行采样，$\rho(*)$代表投影变换过程
