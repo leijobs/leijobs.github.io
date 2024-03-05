@@ -51,7 +51,7 @@ tags: OccNets Mono-View
 假定相机内参 K 已知，将 3D voxels 的中心点 ($
 x^{c}$)投影到 2D，并从 2D Decoder 输出的 feature map 结果进行采样，在 1-2-4-8 的尺度上重复此过程：
 $$
-\mathrm{F}_{3 \mathrm{D}}=\sum_{s \in S} \Phi_{\rho(x^{\mathrm{c}})}(\mathrm{F}_{2 \mathrm{D}}^{1: s})
+F_{3D}=\sum_{s \in S} \Phi_{\rho(x^{c})}(F_{2D}^{1: s})
 $$
 
 其中，$\phi_a(b)$代表在 a 坐标系下对 b 进行采样，$\rho(*)$代表投影变换过程
@@ -126,7 +126,7 @@ $$
 \mathcal{L}_{\text {scal }}(\hat{p}, p)=-\frac{1}{C} \sum^{C}\left(P_{c}(\hat{p}, p)+R_{c}(\hat{p}, p)+S_{c}(\hat{p}, p)\right)
 $$
 
-实际上，在计算中会分别优化语义 loss 函数 $\mathcal{L}^{sem}_{scal}(\hat{y}, y)$，以及几何 loss 函数$\mathcal{L}^{geo}_{scal}(\hat{y}, y)$
+实际上，在计算中会分别优化语义 loss 函数 $L^{sem}_{scal}(\hat{y}, y)$，以及几何 loss 函数$L^{geo}_{scal}(\hat{y}, y)$
 
 ##### Frustum loss
 

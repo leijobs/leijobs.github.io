@@ -57,7 +57,7 @@ $$
 
 ![](../assets/static/C9nYbwLbMoX5Epx4j2Gcxw00nOg.png)
 
-在推理时，假设时刻为$t$，先将多视图图像输入 backbone 网络，比如 ResNet101 提取多视图的特征 $F_t=\{F_t^i \}_{i=1}^{N_{view}}$ ，其中 $F_tS^i$ 表示第 i 个视图的特征， $N_{view}$ 表示视图的总个数
+在推理时，假设时刻为$t$，先将多视图图像输入 backbone 网络，比如 ResNet101 提取多视图的特征 $F_t=\{F_t^i\}_{i=1}^{N_{view}}$ ，其中 $F_t^i$ 表示第 i 个视图的特征， $N_{view}$ 表示视图的总个数
 
 同时用$B_{t-1}$表示在$t-1$时刻的 BEV 先验特征，那么会先使用 BEV query 来查找先验的时间特征$B_{t-1}$，然后再使用 BEV query 来查找对应的多视图特征$F_{t}$，经过 feed-forward 网络优化 BEV 特征；
 
