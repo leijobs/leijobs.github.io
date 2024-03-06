@@ -132,6 +132,4 @@ $$
 
 相比于其他简单将 BEV 特征堆栈的方法，TSA 使用 RNN-like 的更新方式在计算效率上更高效
 
-## xxxxxxxxxx |-- configs|   |-- 3dssd|   |-- _base_|   |-- benchmark|   |-- centerpoint|   |-- dynamic_voxelization|   |-- fastbev|   |-- fcos3d|   |-- fp16|   |-- free_anchor|   |-- groupfree3d|   |-- h3dnet|   |-- imvotenet|   |-- imvoxelnet|   |-- m2bev|   |-- mvxnet|   |-- nuimages|   |-- paconv|   |-- parta2|   |-- pointnet2|   |-- pointpillars|   |-- regnet|   |-- second|   |-- ssn|   `-- votenet|-- mmcv_custom|   |-- checkpoint.py|   |-- cpp_extension.py|   |-- multi_scale_deform_attn.py|   `-- remove.sh|-- mmdet3d|-- script|   `-- view_tranform_cuda|-- setup.cfg|-- setup.py`-- tools    |-- __init__.py    |-- analysis_tools    |-- convert_ckp.py    |-- create_data.py    |-- create_data.sh    |-- data_converter    |-- eval.py    |-- fastbev_run.sh    |-- misc    |-- model_converters    |-- slurm_analysis.sh    |-- slurm_eval.sh    |-- slurm_test.sh    |-- slurm_train.sh    |-- slurm_vis.sh    |-- test.py    `-- train.pybash
-
 ### Code Details
