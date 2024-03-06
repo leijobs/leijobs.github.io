@@ -57,7 +57,12 @@ $$
 
 ![](../assets/static/C9nYbwLbMoX5Epx4j2Gcxw00nOg.png)
 
-在推理时，假设时刻为$t$，先将多视图图像输入 backbone 网络，比如 ResNet101 提取多视图的特征 $F_t=\{F_t^i\}_{i=1}^{N_{view}}$ ，其中 $F_t^i$ 表示第 i 个视图的特征， $N_{view}$ 表示视图的总个数
+在推理时，假设时刻为$t$，先将多视图图像输入 backbone 网络，比如 ResNet101 提取多视图的特征 :
+$$
+F_t=\{F_t^i\}_{i=1}^{N_{view}}
+$$
+
+其中 $F_t^i$ 表示第 i 个视图的特征， $N_{view}$ 表示视图的总个数
 
 同时用$B_{t-1}$表示在$t-1$时刻的 BEV 先验特征，那么会先使用 BEV query 来查找先验的时间特征$B_{t-1}$，然后再使用 BEV query 来查找对应的多视图特征$F_{t}$，经过 feed-forward 网络优化 BEV 特征；
 
@@ -94,7 +99,7 @@ $$
 
 公式中，$H、W$为 BEV query 的空间尺度，$s$为 BEV 网格的分辨率，$(x^{\prime},y^{\prime})$为自车为原点的坐标位置
 
-在 3D 空间中，$(x^{\prime},y^{\prime})$位置的目标还有一个高度信息$z^{\prime}$，因此作者预定义了一组高度锚点 $\{z^{\prime}_j \}_{j=1}^{N_{ref}}$ ，用于保证能够获得高度信息
+在 3D 空间中，$(x^{\prime},y^{\prime})$位置的目标还有一个高度信息$z^{\prime}$，因此作者预定义了一组高度锚点 $\{z\prime_j \}_{j=1}^{N_{ref}}$ ，用于保证能够获得高度信息
 
 最后，将 3D 参考点通过相机投影矩阵投影到不同的视图，表示如下：
 
@@ -127,6 +132,6 @@ $$
 
 相比于其他简单将 BEV 特征堆栈的方法，TSA 使用 RNN-like 的更新方式在计算效率上更高效
 
-## Code Framework
+## xxxxxxxxxx |-- configs|   |-- 3dssd|   |-- _base_|   |-- benchmark|   |-- centerpoint|   |-- dynamic_voxelization|   |-- fastbev|   |-- fcos3d|   |-- fp16|   |-- free_anchor|   |-- groupfree3d|   |-- h3dnet|   |-- imvotenet|   |-- imvoxelnet|   |-- m2bev|   |-- mvxnet|   |-- nuimages|   |-- paconv|   |-- parta2|   |-- pointnet2|   |-- pointpillars|   |-- regnet|   |-- second|   |-- ssn|   `-- votenet|-- mmcv_custom|   |-- checkpoint.py|   |-- cpp_extension.py|   |-- multi_scale_deform_attn.py|   `-- remove.sh|-- mmdet3d|-- script|   `-- view_tranform_cuda|-- setup.cfg|-- setup.py`-- tools    |-- __init__.py    |-- analysis_tools    |-- convert_ckp.py    |-- create_data.py    |-- create_data.sh    |-- data_converter    |-- eval.py    |-- fastbev_run.sh    |-- misc    |-- model_converters    |-- slurm_analysis.sh    |-- slurm_eval.sh    |-- slurm_test.sh    |-- slurm_train.sh    |-- slurm_vis.sh    |-- test.py    `-- train.pybash
 
 ### Code Details
