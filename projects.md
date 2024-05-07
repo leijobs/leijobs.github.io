@@ -7,8 +7,20 @@ title: Projects
 
 Here are some projects I want to share with you. Visit [my GitHub](https://github.com/leijobs/) for more source code.
 
-* [Carla GroundTruth Data Generator](https://github.com/leijobs/Carla-DataGenerator)
-
-* [ELAS Stereo Dense Recon](https://github.com/leijobs/elas-road-reconstruct)
-
+<table id="repo-table">
+<tbody>
+<tr>
+    <td id="Carla Data Generator"><center>
+      <a><img alt="whereami" width="180" height="90" style="object-fit: contain;" src="assets/post_assets/carla-data.png"></a>
+      <div style="margin-top: 0.5rem"><i class="fa fa-star"></i><span class="stars" style="margin-right: 1rem; margin-left: 0.5rem"></span><b>whereami</b></div>
+      <a class="repo-description"></a>
+    </center></td>
+    <td id="ELAS Stereo Dense Recon"><center>
+      <a><img alt="shrynk" width="180" height="90" style="object-fit: contain;" src="assets/post_assets/image-elas-20231112-1.png"></a>
+      <div style="margin-top: 0.5rem"><i class="fa fa-star"></i><span class="stars" style="margin-right: 1rem; margin-left: 0.5rem"></span><b>shrynk</b></div>
+      <a class="repo-description"></a>
+    </center></td>
+</tr>
+</tbody>
+</table>
 
