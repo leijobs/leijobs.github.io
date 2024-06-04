@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mono-Semantic-Maps
-thumbnail-img: ./assets/static/RHzbbWG8Ro01zTxaHU5cYFSUnZf.png
+thumbnail-img: ./assets/static/O2mSbWrb4osQzcxcP9ocs8RSnjQ.png
 tags: BEV Perception Mono-view
 ---
 
