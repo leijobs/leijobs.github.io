@@ -5,7 +5,7 @@ thumbnail-img: /assets/static/YzNmbwez1oySHtxkZ7ycowPuntj.png
 tags: OccNets Mono-View
 ---
 
-# 01_MonoScene
+# MonoScene
 
 ## Info
 
