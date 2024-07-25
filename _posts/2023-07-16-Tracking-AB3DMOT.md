@@ -8,19 +8,13 @@ tags: tracking MOT
 
 #  AB3DMOT: A Baseline for 3D Multi-Object Tracking and New Evaluation Metrics
 
+> paper: https://arxiv.org/pdf/2008.08063.pdf
+>
+> paper: https://arxiv.org/pdf/1907.03961.pdf
+>
+> > github: https://github.com/xinshuoweng/AB3DMOT
+
 > `2D`多目标的匹配和跟踪往往基于卡尔曼滤波+匈牙利匹配，或者`KCF`等算法；而现在`3D`目标感知如火如荼，因此想在学习`3D`目标跟踪的同时，复习一遍`2D`目标跟踪。
-
-```
-文章信息
-作者：Xinshuo Weng, Jianren Wang, David Held, and Kris Kitani
-单位：Robotics Institute, Carnegie Mellon University, Pittsburgh, USA
-标题1：3D Multi-Object Tracking: A Baseline and New Evaluation Metrics (IROS 2020)
-链接1：https://arxiv.org/pdf/1907.03961.pdf [Pages:9]
-标题2：AB3DMOT: A Baseline for 3D Multi-Object Tracking and New Evaluation Metrics (ECCVW 2020)
-链接2：https://arxiv.org/pdf/2008.08063.pdf [Pages:4]
-代码：https://github.com/xinshuoweng/AB3DMOT
-```
-
 
 
 ## 主要贡献
