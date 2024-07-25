@@ -5,7 +5,7 @@ thumbnail-img: /assets/static/FOhlbyptzoWXVJxlq9Dcb4vGnGb.png
 tags: SLAM AVP
 ---
 
-# 02_AVM-SLAM
+# AVM-SLAM
 
 ## Info
 
