@@ -153,7 +153,7 @@ $$
 $通过融合$F^{pts}_m$和$F^{img}_m$ 获得：
 
 $$
-F_m^{obj}=\text{mахрооӏ}(F_m^{pts}\oplus F_m^{img})
+F_m^{obj}=\text{mахрооl}(F_m^{pts}\oplus F_m^{img})
 $$
 
 这些特征再与初始 Proposal 特征融合生成最终输出的 3D proposal 特征。
