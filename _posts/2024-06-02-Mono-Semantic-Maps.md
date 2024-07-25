@@ -57,9 +57,9 @@ BEV 地图天生适合预测和规划：【4，9】将本地环境渲染为 BEV 
 
 ### Semantic occupancy grid prediction
 
-占据网格是一种随机离散场，其中每个位置$x_i$都关联了一个状态$m_i$，比如占据（$m_i = 1$）或者 free（$m_i = 0$）。实际上，世界的真实状态是未知的，因此$m_i$表示为一组随机数，描述网格的预测状态（$p(m_i|z_{1:t})$），其中$z_{1:t}$表示一组观测。
+占据网格是一种随机离散场，其中每个位置$x_i$都关联了一个状态$m_i$，比如占据（$m_i = 1$）或者 free（$m_i = 0$）。实际上，世界的真实状态是未知的，因此$m_i$表示为一组随机数，描述网格的预测状态（$p(m_i \vert z_{1:t})$），其中$z_{1:t}$表示一组观测。
 
-这个网格信息可以进一步扩展为语义网格，此时的预测状态不再是一个值，作者使用 deep CNN 来做 inverse sensor model，表示为$p(m_i^c|z_{t}) = f_\theta(z_t,x_i)$，设置为对每个类别的预测状态。
+这个网格信息可以进一步扩展为语义网格，此时的预测状态不再是一个值，作者使用 deep CNN 来做 inverse sensor model，表示为$p(m_i^c \vert z_{t}) = f_\theta(z_t,x_i)$，设置为对每个类别的预测状态。
 
 因此，目标即为预测 2D BEV 图像的多类别的 binary label。看起来和语义分割类似，但是实际上 PV 和 BEV 视图的坐标系表示不一致，因此作者引入 transformer layer，利用视觉集合和全连接推理转化为为 BEV 特征。
 
@@ -78,10 +78,10 @@ Losses 分为两部分，确定目标的 binary 交叉熵损失和不确定目�
 
 - binary 交叉熵损失
 
-binary 交叉熵损失有利于语义网格的预测概率$p(m_i|z_{1:t})$到 gt 网格$\hat{m}^c_i$的回归。由于数据集中包含大量小目标，因此 loss 为 binary 交叉熵 loss 的平衡变种，其中$\alpha^c$表示平衡类别$\alpha$的尺度系数。
+binary 交叉熵损失有利于语义网格的预测概率$p(m_i\vert z_{1:t})$到 gt 网格$\hat{m}^c_i$的回归。由于数据集中包含大量小目标，因此 loss 为 binary 交叉熵 loss 的平衡变种，其中$\alpha^c$表示平衡类别$\alpha$的尺度系数。
 
 $$
-\mathcal{L}_{xent}=\alpha^c\hat{m}_i^c\log p(m_i^c|z_t)+(1-\alpha^c)(1-\hat{m}_i^c)\log\left(1-p(m_i^c|z_t)\right)
+\mathcal{L}_{xent}=\alpha^c\hat{m}_i^c\log p(m_i^c\vert z_t)+(1-\alpha^c)(1-\hat{m}_i^c)\log\left(1-p(m_i^c\vert z_t)\right)
 $$
 
 - 不确定目标的不确定性 loss
@@ -89,7 +89,7 @@ $$
 对于不确定的网格，网络仍然会预测较高的置信度。为了引导网络对不确定的网格预测不确定性，这种引入最大化预测熵的 loss，引导网络对于每个类别的预测靠近 0.5：
 
 $$
-\mathcal{L}_{uncert}=1-p(m_i^c|z_t)\log_2p(m_i^c|z_t)
+\mathcal{L}_{uncert}=1-p(m_i^c\vert z_t)\log_2p(m_i^c \vert z_t)
 $$
 
 对于网络不可见的网格，使用最大熵损失。此时的网格要么在 FOV 以外，要么被遮挡了，对于该区域的网格忽略交叉熵损失。
@@ -104,10 +104,10 @@ $$
 
 #### Temporal and sensor data fusion
 
-贝叶斯占据网格通过贝叶斯滤波器提供了对多帧多组观测的天然的融合方法。假设得到图像观测$z_t$时对应的外参为$M_t$，可以将网格概率表示$p(m^c_i|z_t)$为 logistic 函数的反函数（log-odds）表示：
+贝叶斯占据网格通过贝叶斯滤波器提供了对多帧多组观测的天然的融合方法。假设得到图像观测$z_t$时对应的外参为$M_t$，可以将网格概率表示$p(m^c_i\vert z_t)$为 logistic 函数的反函数（log-odds）表示：
 
 $$
-l^c_{i,t} = \frac{p(m^c_i|z_t)}{1 - p(m^c_i|z_t)}
+l^c_{i,t} = \frac{p(m^c_i\vert z_t)}{1 - p(m^c_i\vert z_t)}
 $$
 
 方便地等同于网络的前象限输出激活。因此，观测值 1 至 t 的合并对数占空比为:
@@ -119,7 +119,7 @@ $$
 应用标准 sigmoid 函数，可以恢复出融合后的占用概率：
 
 $$
-p(m^c_i|z_{1:t}) = \frac{1}{1+exp(-l^c_{i,1:t})}
+p(m^c_i\vert z_{1:t}) = \frac{1}{1+exp(-l^c_{i,1:t})}
 $$
 
 log-odds 值$l^c_0$表示网格中类别$c$的先验概率：
@@ -128,7 +128,7 @@ $$
 l^c_0 = \frac{p(m^c_i)}{1-p(m^c_i)}
 $$
 
-为了获得全局坐标系下的占据概率，使用外参矩阵将在本地相机帧坐标系中预测占用率的网络输出重新采样到全局帧中，比如$p(m^c_i|z_t) = f_{\theta}(z_t, M^{-1}_tx_i)$。该方法能够聚合环视信息以及融合超过 20s 的网格观测结果。
+为了获得全局坐标系下的占据概率，使用外参矩阵将在本地相机帧坐标系中预测占用率的网络输出重新采样到全局帧中，比如$p(m^c_i\vert z_t) = f_{\theta}(z_t, M^{-1}_tx_i)$。该方法能够聚合环视信息以及融合超过 20s 的网格观测结果。
 
 #### Dense transformer layer
 
