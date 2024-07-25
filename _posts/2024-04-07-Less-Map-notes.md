@@ -5,7 +5,7 @@ thumbnail-img: /assets/static/GUNFbekwroJMdoxHfBecTRgzn9g.png
 tags: SLAM AVP
 ---
 
-# 07_Less-Map
+# Less-Map
 
 ## Info
 
