@@ -12,7 +12,7 @@ tags: tracking MOT
 >
 > paper: https://arxiv.org/pdf/1907.03961.pdf
 >
-> > github: https://github.com/xinshuoweng/AB3DMOT
+> github: https://github.com/xinshuoweng/AB3DMOT
 
 > `2D`多目标的匹配和跟踪往往基于卡尔曼滤波+匈牙利匹配，或者`KCF`等算法；而现在`3D`目标感知如火如荼，因此想在学习`3D`目标跟踪的同时，复习一遍`2D`目标跟踪。
 
