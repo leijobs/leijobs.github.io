@@ -5,7 +5,7 @@ thumbnail-img: /assets/../assets/static/PtEFbXG0DoN5nMxuryyc96IynJg.png
 tags: BEV Perception Multi-view Temporal
 ---
 
-# 06_BEVFusion_MIT
+# BEVFusion_MIT
 
 ## Info
 
