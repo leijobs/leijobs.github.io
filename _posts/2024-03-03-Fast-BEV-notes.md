@@ -12,8 +12,6 @@ tags: BEV Perception Multi-view
 > 论文：[https://arxiv.org/abs/2301.12511](https://arxiv.org/abs/2301.12511)
 >
 > github：[https://github.com/Sense-GVT/Fast-BEV](https://github.com/Sense-GVT/Fast-BEV)
->
-> 本地 github：[https://github.com/leijobs/Fast-BEV](https://github.com/leijobs/Fast-BEV)
 
 ## Framework
 
