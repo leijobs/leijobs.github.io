@@ -5,7 +5,7 @@ thumbnail-img: /assets/static/S4OXbf6t8oDAlYxGoePcJo98nLb.png
 tags: BEV Perception Multi-view
 ---
 
-# 02_FAST-BEV
+# FAST-BEV
 
 ## Info
 
