@@ -1,5 +1,5 @@
 ---
 layout: home
 title: Hi! I'm HoHo
-subtitle: This is where I will share my thoughts
+subtitle: People tend to overestimate what they can do in the short term, yet underestimate what they can achieve in the long run.
 ---
