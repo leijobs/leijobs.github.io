@@ -18,7 +18,7 @@ tags: Calib
 
 ### Lidar2Camera
 
-3D Lidar 点云在 Lidar 坐标系下可以表示为$p^L_i = (X_i,Y_i,Z_i) \in \mathbb{R}^3$，需要投影到相机坐标系得到$p^C_i = (X_c,Y_c,Z_c)^T \in \mathbb{R}^3$通过如下转换：
+3D Lidar 点云在 Lidar 坐标系下可以表示为$ p^L_i = (X_i,Y_i,Z_i) \in \mathbb{R}^3 $，需要投影到相机坐标系得到$ p^C_i = (X_c,Y_c,Z_c)^T \in \mathbb{R}^3 $通过如下转换：
 
 $$
 p^C_i = R \cdot p^L_i + t
@@ -38,7 +38,7 @@ $$
 
 ### Lidar2Lidar
 
-Lidar 到 Lidar 的标定相当于两组点云的匹配，可以用 ICP 和 NDT 进行匹配，两组点云可以表示为$p^S_i = (X_i,Y_i,Z_i) \in \mathbb{R}^3$和$p^T_i = (X_i,Y_i,Z_i) \in \mathbb{R}^3$，两者之间的刚性变换可以表示为：
+Lidar 到 Lidar 的标定相当于两组点云的匹配，可以用 ICP 和 NDT 进行匹配，两组点云可以表示为$ p^S_i = (X_i,Y_i,Z_i) \in \mathbb{R}^3 $和$ p^T_i = (X_i,Y_i,Z_i) \in \mathbb{R}^3 $，两者之间的刚性变换可以表示为：
 
 $$
 p^S_i = R \cdot p^T_i + t
@@ -107,9 +107,9 @@ $$
 \mathcal{J}_{\boldsymbol{sum}}=\alpha\mathcal{J}_{\boldsymbol{board}}+\beta\mathcal{J}_{\boldsymbol{lidar}}
 $$
 
-其中，$\mathcal{J}_{\boldsymbol{board}}$表示标定板上角点的重投影误差，$\mathcal{J}_{\boldsymbol{lidar}}$表示标定板上圆环中心的重投影误差，实验中设置$\alpha = 1$和$\beta = 60$
+其中，$\mathcal{J}\_{\boldsymbol{board}}$表示标定板上角点的重投影误差，$\mathcal{J}\_{\boldsymbol{lidar}}$表示标定板上圆环中心的重投影误差，实验中设置$\alpha = 1$和$\beta = 60$
 
-而$\mathcal{J}_{\boldsymbol{board}}$和$\mathcal{J}_{\boldsymbol{lidar}}$分别表示如下：
+而$\mathcal{J}\_{\boldsymbol{board}}$和$\mathcal{J}\_{\boldsymbol{lidar}}$分别表示如下：
 
 $$
 \mathcal{J}_{\boldsymbol{board}}=\sum_{(u,v)\in P_B}(||u-u_{det}||_2+||v-v_{det}||_2)
@@ -153,19 +153,19 @@ $$
 \mathcal{M}_{line}(\mathbf{q}):=\begin{cases}1&\mathbf{q}\in Q_{line}\\0&\mathrm{otherwise}&\end{cases}.
 $$
 
-1. 获得了图像和点云的特征之后，引入 cost 函数用于衡量给定$(r,t)$情况下的图像和点云的匹配质量；对 mask $S_l$使用逆深度变换（IDT）从而避免后续优化时复制重复最大值，得到的高度图满足$\mathcal{H}_{line},line \in \{pole, lane\}$，定义如下：
+1. 获得了图像和点云的特征之后，引入 cost 函数用于衡量给定$(r,t)$情况下的图像和点云的匹配质量；对 mask $S_l$使用逆深度变换（IDT）从而避免后续优化时复制重复最大值，得到的高度图满足$\mathcal{H}\_{line},line \in \{pole, lane\}$，定义如下：
 
 $$
 \mathcal{H}_{line}(\mathbf{q}):=\begin{cases}\max_{\mathbf{s}\in\mathbb{R}^2\setminus Q_{line}}\gamma_0^{\|\mathbf{q}-\mathbf{s}\|_1}&\mathbf{q}\in Q_{line}\\0&\mathbf{q}\in\mathbb{R}^2\setminus Q_{line}\end{cases}.
 $$
 
-1. 下一步，引入，cost 函数 $\mathcal{J}_{\boldsymbol{proj}}: (r,t) \rightarrow \mathbb{R}$，表示投影的像素$P_{pole}$与$P_{lane}$和对应的 mask 的连续性，$\mathcal{J}_{\boldsymbol{proj}}$定义如下：
+1. 下一步，引入，cost 函数 $\mathcal{J}\_{\boldsymbol{proj}}: (r,t) \rightarrow \mathbb{R}$，表示投影的像素$P_{pole}$与$P_{lane}$和对应的 mask 的连续性，$\mathcal{J}\_{\boldsymbol{proj}}$定义如下：
 
 $$
 \mathcal{J}_{\boldsymbol{proj}}=\tanh(\tau_1\sum_{line\in\{pole,~lane\}}\frac{\sum_{\mathbf{p}\in P_{line}^\mathrm{L}}\mathcal{H}_{line}\circ\mathcal{K}(\mathbf{R}(\mathbf{r})\mathbf{p}+\mathbf{t})}{|P_{line}^\mathrm{L}|})
 $$
 
-其中，符号$\circ$表示使用投影的像素位置获得对应的高度值；而$|P^L_{line}|$表示点云$P^L_{line}$的数量用于平衡杆和车道线的 cost；cost 函数越大，匹配关系越好，结果如图所示：
+其中，符号$\circ$表示使用投影的像素位置获得对应的高度值；而$\vert P^L_{line} \vert$表示点云$P^L_{line}$的数量用于平衡杆和车道线的 cost；cost 函数越大，匹配关系越好，结果如图所示：
 
 ![](../assets/static/MOFKbE1WkozbnhxwSbncq1A6ndc.png)
 
@@ -190,7 +190,7 @@ $$
 
 由于随着时间累积，系统误差将会逐渐增大，因此使用 local map 优化来修正这个问题
 
-假设滑动窗口中的第一帧为$P$，当前帧为$O$，假设在$P$和$O$帧时从 Imu 坐标系到世界坐标系的变换分别为$T^W_{I_P}$和$T^W_{O_P}$，设 Lidar 到 Imu 的变换矩阵为为$T^I_{L}$根据坐标系的链式法则，那么$P$时刻到$O$时刻 Lidar 的坐标系变换可以通过如下公式计算：
+假设滑动窗口中的第一帧为$P$，当前帧为$O$，假设在$P$和$O$帧时从 Imu 坐标系到世界坐标系的变换分别为$T^W\_{I_P}$和$T^W\_{O_P}$，设 Lidar 到 Imu 的变换矩阵为为$T^I_{L}$根据坐标系的链式法则，那么$P$时刻到$O$时刻 Lidar 的坐标系变换可以通过如下公式计算：
 
 $$
 \mathbf{T}_P^\mathrm{O}=\mathbf{T}_L^\mathrm{I}\mathbf{T}_{I_o}^W\mathbf{T}_{I_P}^{W-1}\mathbf{T}_L^{I-1}
