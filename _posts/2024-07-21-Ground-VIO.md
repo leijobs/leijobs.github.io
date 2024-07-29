@@ -114,7 +114,7 @@ $$
 d_{ij}=\hat{h}\cdot\left(1/(\mathbf{u}_f^i)_y-1/(\mathbf{u}_f^j)_y\right)
 $$
 
-其中，$\mathbf{u}_f^i$和$\mathbf{u}_f^j$分别表示$f$在$i$和$j$的观测。假设视觉观测不存在噪声，那么对$d_{ij}$只与高度$\hat{h}$有关，即：
+其中，$\mathbf{u}\_f^i$和$\mathbf{u}\_f^j$分别表示$f$在$i$和$j$的观测。假设视觉观测不存在噪声，那么对$d_{ij}$只与高度$\hat{h}$有关，即：
 
 $$
 d_{ij}\propto\hat{h}
@@ -153,7 +153,7 @@ $$
 \mathbf{p}_f^c=\frac{1}{\lambda}_f\cdot\begin{bmatrix}x\\y\\1\end{bmatrix}=h\cdot\mathbf{R}_{c_\perp}^c\left(\alpha,\theta\right)\begin{bmatrix}x_\perp\\1\\-y_\perp\end{bmatrix}
 $$
 
-其中，$\mathbf{u}_\perp=\begin{bmatrix}x_\perp&y_\perp&1\end{bmatrix}^\top $表示路标点$f$在 BEV 图像上归一化的图像坐标系。
+其中，$\mathbf{u}\_\perp=\begin{bmatrix}x\_\perp&y\_\perp&1\end{bmatrix}^\top $表示路标点$f$在 BEV 图像上归一化的图像坐标系。
 
 CGG 先验使得预测地面路标点成为可能，一旦有新的图像输入，能够根据 IMU 预测的相对位姿去预测地面特征：
 
@@ -195,7 +195,7 @@ $$
 \end{aligned}
 $$
 
-其中，$\mathbf{p}_{b_k}^w, \mathbf{q}_{b_k}^w, \mathbf{v}_{b_k}^w$分别为世界坐标系下第$k$帧的位置，朝向和速度，$\mathbf{b}_{a,b_k}$和$\mathbf{b}_{g,b_k}$为加速度计偏差向量以及陀螺仪漂移向量，$\lambda_0, \lambda_1, \cdots, \lambda_m$表示路标点的逆深度。每个路标点与滑动窗口中的第一个观测帧锚定。
+其中，$\mathbf{p}\_{b_k}^w, \mathbf{q}\_{b_k}^w, \mathbf{v}\_{b_k}^w$分别为世界坐标系下第$k$帧的位置，朝向和速度，$\mathbf{b}\_{a,b_k}$和$\mathbf{b}\_{g,b_k}$为加速度计偏差向量以及陀螺仪漂移向量，$\lambda\_0, \lambda\_1, \cdots, \lambda\_m$表示路标点的逆深度。每个路标点与滑动窗口中的第一个观测帧锚定。
 
 以下是优化中考虑的因子：
 
@@ -207,7 +207,7 @@ $$
 \mathrm{r}_{\mathrm{IMU}}\left(\hat{\alpha}_{b_{k+1}}^{b_{k}},\hat{\beta}_{b_{k+1}}^{b_{k}},\hat{\gamma}_{b_{k+1}}^{b_{k}},\mathrm{x}_{k},\mathrm{x}_{k+1}\right)= \begin{bmatrix}\mathbf{R}_{b_{k}}^{w}\operatorname{\top}\left(\mathbf{p}_{b_{k+1}}^{w}-\mathbf{p}_{b_{k}}^{w}+\frac{1}{2}\mathbf{g}^{w}\Delta t_{k}^{2}-\mathbf{v}_{b_{k}}^{w}\Delta t_{k}-\hat{\alpha}_{b_{k+1}}^{b_{k}}\right)\\\mathbf{R}_{b_{k}}^{w}\operatorname{\top}\left(\mathbf{v}_{b_{k+1}}^{w}+\mathbf{g}^{w}\Delta t_{k}-\mathbf{v}_{b_{k}}^{w}\right)-\hat{\beta}_{b_{k+1}}^{b_{k}}\\2\left[\mathbf{q}_{b_{k}}^{w}\operatorname{-1}\otimes\mathbf{q}_{b_{k+1}}^{w}\otimes\left(\hat{\gamma}_{b_{k+1}}^{b_{k}}\right)^{-1}\right]_{xyz}\\\mathbf{b}_{a,b_{k+1}}-\mathbf{b}_{a,b_{k}}\\\mathbf{b}_{g,b_{k+1}}-\mathbf{b}_{g,b_{k}}\end{bmatrix}
 $$
 
-其中，第$k$和第$k+1$帧表示相邻的两帧，$\Delta t_k$表示对应的时间间隔，$\hat{\alpha}_{b_{k+1}}^{b_k}, \hat{\beta}_{b_{k+1}}^{b_k}, \hat{\gamma}_{b_{k+1}}^{b_k}$表示 IMU 的预积分项
+其中，第$k$和第$k+1$帧表示相邻的两帧，$\Delta t_k$表示对应的时间间隔，$\hat{\alpha}\_{b_{k+1}}^{b_k}, \hat{\beta}\_{b_{k+1}}^{b_k}, \hat{\gamma}\_{b_{k+1}}^{b_k}$表示 IMU 的预积分项
 
 IMU 提供了稳定的相对位姿信息，但是单独使用无法估计绝对的旋转和速度。在 VIO 系统中，真实尺度的旋转和速度可以通过视觉观测以及足够激励的 IMU 相结合来获得
 
@@ -305,7 +305,7 @@ $$
 \theta_{comp} = \theta^{w}_{b_{k}} + \hat{\theta}^{w}_{b_{k}}
 $$
 
-其中，$\theta^{w}_{b_{k}}$是当前 IMU 的 pitch 角估计值，$\hat{\theta}^{w}_{b_{k}}$时曲线拟合的 pitch 角估计值，通过使用相机-地面约束因子，当前帧临时的 CGG 可以通过如下补偿：
+其中，$\theta^{w}\_{b_{k}}$是当前 IMU 的 pitch 角估计值，$\hat{\theta}^{w}\_{b_{k}}$时曲线拟合的 pitch 角估计值，通过使用相机-地面约束因子，当前帧临时的 CGG 可以通过如下补偿：
 
 $$
 \theta_k = \theta + \theta_{comp}
