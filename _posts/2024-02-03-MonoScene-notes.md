@@ -39,8 +39,8 @@ tags: OccNets Mono-View
 - 工作：
 
   - 1.novel 2D-3D 投影变换
-  - 2.3D context relation to enforce spatio-semantic consistency
-  - 3.novel global and local frustum loss
+  - 2.3D 空间-语义上下文关联
+  - 3.novel global 和 local 视锥 loss
 
 ### Method
 
@@ -48,8 +48,8 @@ tags: OccNets Mono-View
 
 ![](../assets/static/Kl2LbAJj3oAp3hx6mdlcdw14nKb.png)
 
-假定相机内参 K 已知，将 3D voxels 的中心点 ($
-x^{c}$)投影到 2D，并从 2D Decoder 输出的 feature map 结果进行采样，在 1-2-4-8 的尺度上重复此过程：
+假定相机内参 K 已知，将 3D voxels 的中心点 ($x^{c}$) 投影到 2D，并从 2D Decoder 输出的 feature map 结果进行采样，在 1-2-4-8 的尺度上重复此过程：
+
 $$
 F_{3D}=\sum_{s \in S} \Phi_{\rho(x^{c})}(F_{2D}^{1: s})
 $$
