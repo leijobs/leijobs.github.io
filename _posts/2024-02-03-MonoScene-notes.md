@@ -144,7 +144,7 @@ $$
 \mathcal{L}_{\mathrm{fp}}=\sum_{k=1}^{\ell^{2}} D_{\mathrm{KL}}\left(P_{k} \| \hat{P}_{k}\right)=\sum_{k=1}^{\ell^{2}} \sum_{c \in C_{k}} P_{k}(c) \log \frac{P_{k}(c)}{\hat{P}_{k}(c)}
 $$
 
-注意，公式中使用$C_k$而非$C$，因为视锥包含很小比例的未定义类别，所以 KL 中局部定义为**undefined **.这里的$C_k$表示包含类别定义的视锥$k$
+注意，公式中使用$C_k$而非$C$，因为视锥包含很小比例的未定义类别，所以 KL 中局部定义为undefined.这里的$C_k$表示包含类别定义的视锥$k$
 
 最终，完整的 loss 如下：
 
