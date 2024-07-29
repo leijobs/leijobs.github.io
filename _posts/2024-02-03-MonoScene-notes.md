@@ -126,7 +126,7 @@ $$
 \mathcal{L}_{\text {scal }}(\hat{p}, p)=-\frac{1}{C} \sum^{C}\left(P_{c}(\hat{p}, p)+R_{c}(\hat{p}, p)+S_{c}(\hat{p}, p)\right)
 $$
 
-实际上，在计算中会分别优化语义 loss 函数 $L^{sem}_{scal}(\hat{y}, y)$ ，以及几何 loss 函数  $L^{geo}_{scal}(\hat{y}, y) $
+实际上，在计算中会分别优化语义 loss 函数 $L^{sem}\_{scal}(\hat{y}, y)$ ，以及几何 loss 函数  $L^{geo}\_{scal}(\hat{y}, y) $
 
 ##### Frustum loss
 
@@ -157,21 +157,19 @@ $$
 ### Experiments
 
 - 数据集：
-
   - SemanticKITTI 设置：
-    - 256x256x32 grid of 0.2m voxels
-    - labeled with 21 classes (19 semantics, 1 free, 1 unknown)
-    - RGB image of cam2 of size 1226x370, left cropped to 1220×370
-    - use the official 3834/815 train/val splits and always evaluate at full scale (i.e. 1:1).
+    - voxel分辨率0.2m，数量256x256x32（51.2x51.2x6.4）
+    - 21个语义类别(19个语义标签, 1 freespace, 1 unknown)
+    - cam2的尺度：1226x370, cam0（左侧）的尺度裁剪为：1220×370
+    - train/val比例：3834/815，全部验证.
 - 训练设置：
-
-  - use FLoSP at scales (1,2,4,8)
-  - 4 supervised relations for 3D CRP (i.e. n=4, with Lrel), and `×`=8×8 frustums for Lfp.
-  - The 3D UNet input is 60x36x60 (1:4) for NYUv2 and 128x128x16 (1:2) for Sem.KITTI due to memory reason.
-  - The output of Sem.KITTI is upscaled to 1:1 with a deconv layer in the completion head.
-  - train 30 epochs with an AdamW optimizer, a batch size of 4 and a weight decay of 1e-4. The learning rate is 1e-4, divided by 10 at epoch 20/25 for NYUv2/SemanticKITTI
-- Metrics:
-
-  - report the intersection over union (IoU) of occupied voxels, regardless of their semantic class, for the scene completion (SC) task and the mean IoU (mIoU) of all semantic classes for the SSC task.
-  - the strong interaction between IoU and mIoU since better geometry estimation (i.e. high IoU) can be achieved by invalidating semantic labels (i.e. low mIoU)
+  - FLoSP尺度 (1,2,4,8)
+  - 对于3D场景补全（CRP）任务，使用了4个有监督的关系（即n=4，包含Lrel），并且在Lfp（局部特征金字塔）中采用了8x8的视锥体（frustums）来增强特征表示
+  - NYUv2数据集，3D UNet的输入为60x36x60（空间分辨率比例为1:4），SemanticKITTI数据集，输入尺寸被调整为128x128x16（空间分辨率比例为1:2）
+  - 对于SemanticKITTI的输出，在completion head中使用了一个反卷积层来将输出上采样到原始尺寸（1:1），以匹配输入数据的空间分辨率
+  - 训练：使用AdamW优化器，epochs为30，atch size为4，weight decay为1e-4。lr为1e-4，并在第20/25轮次时（针对NYUv2/SemanticKITTI）将其除以10，以调整学习速度
+- 评估指标：
+  - 场景补全（SC）任务，使用占用体素（occupied voxels）的交并比（IoU），不考虑其语义类别。评估模型在重建场景几何结构方面的性能
+  - 语义场景补全（SSC）任务，使用所有语义类别的平均交并比（mIoU），综合考虑了模型在几何重建和语义分类两方面的性能
+  - 注：IoU和mIoU之间存在强烈的相互作用。通过忽略或错误分类某些语义标签（即降低mIoU），可以提高几何估计的准确性（即提高IoU）。这反映了在平衡几何重建和语义分类任务时面临的挑战。
 
