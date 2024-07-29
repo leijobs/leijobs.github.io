@@ -60,7 +60,7 @@ tags: BEV Multi-module Mono-view
 
 > 验证 1： PanoticBEV
 
-![](../assets/static/H7IVbv1NEoklndxbrHPcWgGgnig.png)
+<img src="../assets/static/H7IVbv1NEoklndxbrHPcWgGgnig.png" style="zoom:33%;" />
 
 结论：Radar 到 BEV 的投影相对稀疏，并且与目标关联不大【已经转换到 cam 坐标系】
 
