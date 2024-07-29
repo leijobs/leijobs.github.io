@@ -114,12 +114,14 @@ PRA 的流程如下：
 1. 首先参考 CRAFT，使用 soft polar association（SPA）实现雷达点和 3D Proposal 的关联，SPA 将雷达点和 3D proposal 转换为极坐标表示，并将一定角度和距离范围内的雷达点和 3D proposal 关联，关联的雷达点数量越多，对 Proposal 特征贡献越大
 
 2. 不过有些雷达点与 Proposal 无关，PRA 能够有效滤除外点：
-   假设第一阶段检测包含$N$个 Proposal 中的$b$，其属性包括$b = (\mathbf{c},w,h,l,\theta,\mathbf{v}_{pred})$，假设有$K$个雷达点与$b$关联，表示为$\{r_k\}^K_{k=1}$，第$k$个点的 3D 位置为$u_k \in \mathbb{R}^3$。
+   假设第一阶段检测包含$N$个 Proposal 中的$b$，其属性包括$b = (\mathbf{c},w,h,l,\theta,\mathbf{v}\_{pred})$，假设有$K$个雷达点与$b$关联，表示为$\{r_k\}^K\_{k=1}$，第$k$个点的 3D 位置为$u_k \in \mathbb{R}^3$。
    对$c$和$u_k$之间的雷达点特征和相对位置进行 encode，计算第$k$点的重要性权重$s_k$，获得所关注的雷达点特征为$a_k$：
+   
    $$
    \begin{aligned}s_k&=\text{MLP}_2\left([\text{MLP}_1(r_k);\delta(\textbf{c}-\textbf{u}_k)]\right)\\a_k&=\text{softmax}(\{s_k\}_{k=1}^K)_k\odot\text{MLP}_3(r_k)\\&\text{where }\forall k\in\{1,\cdots,K\}\end{aligned}
    $$
-   其中，$\sigma(\cdot)$表示位置 encoding
+   
+   其中，$\sigma(\cdot) $表示位置 encoding
 
 #### Radar Grid Point Pooling
 
@@ -127,13 +129,13 @@ PRA 的流程如下：
 
 ![](../assets/static/ElVGbULJqox3UtxujiBcsPofneZ.png)
 
-给定 3D Proposal 的速度向量为$\mathbf{v}_{pred}$，可以分解为切向速度$\mathbf{v}_{tan}$和法向速度$\mathbf{v}_{rad}$。对于第$k$个雷达点$r_k$，根据如下可以参考雷达点位置$u_k$来计算网格点$T = \{g^t_k\}^{T-1}_{t=0}$：
+给定 3D Proposal 的速度向量为$\mathbf{v}\_{pred}$，可以分解为切向速度$\mathbf{v}\_{tan}$和法向速度$\mathbf{v}\_{rad}$。对于第$k$个雷达点$r_k$，根据如下可以参考雷达点位置$u_k$来计算网格点$T = \{g^t_k\}^{T-1}\_{t=0}$：
 
 $$
 \begin{aligned}\gamma&=\left\{\begin{array}{cc}\rho_{min},&|\mathbf{v}_{tan}|\leq\rho_{min}\\|\mathbf{v}_{tan}|,&\rho_{min}<|\mathbf{v}_{tan}|<\rho_{max}\\\rho_{max},&|\mathbf{v}_{tan}|\geq\rho_{max}\end{array}\right.\\g_k^t&=\gamma\cdot\left(\frac{t}{T-1}-\frac{1}{2}\right)\cdot\frac{\mathbf{v}_{tan}}{|\mathbf{v}_{tan}|}+\mathbf{u}_k,t=0,...,T-1\end{aligned}
 $$
 
-如图所示，获得网格点的切向速度$\mathbf{v}_{tan}$，这样做的原因是雷达点在切向的速度噪声更大，因此网格点应该位于该方向以获得更佳的雷达点特征；相邻网格点的空间间隔由$\gamma$决定，与$\mathbf{v}_{tan}$的幅值成比例。由于$\mathbf{v}_{tan}$包含一个预测值，因此并不准确，所以网格点也不一定正确，因此作者为$\gamma$引入上界$p_{max}$和下界$p_{min}$。
+如图所示，获得网格点的切向速度$\mathbf{v}\_{tan}$，这样做的原因是雷达点在切向的速度噪声更大，因此网格点应该位于该方向以获得更佳的雷达点特征；相邻网格点的空间间隔由$\gamma$决定，与$\mathbf{v}\_{tan}$的幅值成比例。由于$\mathbf{v}\_{tan}$包含一个预测值，因此并不准确，所以网格点也不一定正确，因此作者为$\gamma$引入上界$p\_{max}$和下界$p\_{min}$。
 
 对于每个 3D Proposal，$k$个雷达点将生成$KT$个网格点，Farthest Point Sampling（FPS）用于选择$M$个网格点形成固定尺寸的网格点集合$\{g_m\}^M_{m=1}$。
 
@@ -153,7 +155,7 @@ $$
 $通过融合$F^{pts}_m$和$F^{img}_m$ 获得：
 
 $$
-F_m^{obj}=\text{mахрооl}(F_m^{pts}\oplus F_m^{img})
+F_m^{obj}=\text{Maхрооl}(F_m^{pts}\oplus F_m^{img})
 $$
 
 这些特征再与初始 Proposal 特征融合生成最终输出的 3D proposal 特征。
