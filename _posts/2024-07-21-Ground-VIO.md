@@ -224,7 +224,7 @@ $$
 其中有：
 
 $$
-\mathbf{p}_{f}^{{c_{j}}}=\mathbf{R}_{{b_{j}}}^{w}\top\left(\mathbf{R}_{{b_{i}}}^{w}\left(\mathbf{R}_{c}^{b}\left(\frac{\mathbf{u}_{f}^{i}}{\lambda_{f}}\right)+\mathbf{p}_{c}^{b}\right)+\mathbf{p}_{{b_{i}}}^{w}-\mathbf{p}_{{b_{j}}}^{w}\right)
+\mathbf{p}_{f}^{c_{j}}=\mathbf{R}\_{b_{j}}^{w}\top\left(\mathbf{R}_{b_{i}}^w \left(\mathbf{R}_c^b \left(\frac{\mathbf{u}_f^i}{\lambda_{f}}\right)+\mathbf{p}_c^b \right)+\mathbf{p}_{b_{i}}^w-\mathbf{p}_{b_{j}}^w\right)
 $$
 
 其中，$\mathbf{u}^i_f$和$\mathbf{u}^j_f$表示在第$i$帧和$j$帧的视觉观测，$(\mathbf{R}_c^b,{\mathbf{p}}_c^b)$表示 IMU-相机的外参矩阵
