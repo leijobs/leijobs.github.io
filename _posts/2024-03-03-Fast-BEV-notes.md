@@ -37,7 +37,7 @@ tags: BEV Perception Multi-view
 - Query-Based 2D-3D 变换过程可以描述为：
 
 $$
-F_{BEV}(x,y,z)=Attn(q,k,v)
+F_{BEV}(x,y,z)=\text{Attn}(q,k,v)
 $$
 
 其中，q，k，v 分别表示 query，key 和 value；$q \subset P_{x y z}, k, v \subset F_{2D}(u,v)$；而$P_{x y z}$表示预先定义的 3D 空间的锚点，（x, y, z）表示空间坐标，$F_{2D}(u,v)$表示图像平面的特征，（u, v）表示像素坐标
@@ -47,7 +47,7 @@ $$
 - Depth-Based 2D-3D 变换过程可以描述为：
 
 $$
-F_{\text {bev }}(x, y, z)=\operatorname{Pool}\left\{F_{2 D}(u, v) \otimes D(u, v)\right\}_{x, y, z}
+F_{\text {bev }}(x, y, z)=\text{Pool}\left\{F_{2 D}(u, v) \otimes D(u, v)\right\}_{x, y, z}
 $$
 
 其中，$F_{2D}(u,v)$表示图像平面的特征，（u, v）表示像素坐标，$D(u,v)$表示 2D 图像上的深度预测结果，而$\otimes$操作表示 voxel pooling 操作，往往依赖于 cuda 支持
