@@ -266,7 +266,7 @@ $$
 \end{gathered}
 $$
 
-其中，$\mathbf{r}\_p$和${\mathbf{H}}\_p)$表示参考 VINS-MONO 边缘化获得的先验信息，$\mathcal{F}$是滑动窗口中维护的路标点，$\mathcal{F}\_{\bot}$是地面路标点，作为$\mathcal{F}$的子集。$\rho_H(*)$和$\rho\_C(*)$是 Huber 和柯西和函数。$(\mathbf{P}\_{IMU},{\mathbf{P}}\_{cam}, P\_{\mathrm{C-G}})$表示残差的协方差和方差项，并通过 Ceres 进行求解。
+其中，$\mathbf{r}\_p$和${\mathbf{H}}\_p)$表示参考 VINS-MONO 边缘化获得的先验信息，$\mathcal{F}$是滑动窗口中维护的路标点，$\mathcal{F}\_{\bot}$是地面路标点，作为$\mathcal{F}$的子集。$\rho_H(\cdot)$和$\rho\_C(\cdot)$是 Huber 和柯西和函数。$(\mathbf{P}\_{IMU}, {\mathbf{P}}\_{cam}, P\_{\mathrm{C-G}}) $表示残差的协方差和方差项，并通过 Ceres 进行求解。
 
 #### Initialization of Camera-Ground Parameters
 
