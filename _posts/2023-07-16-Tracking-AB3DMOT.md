@@ -5,7 +5,6 @@ thumbnail-img: /assets/post_assets/image-20230716172844563.png
 tags: tracking MOT
 ---
 
-
 #  AB3DMOT: A Baseline for 3D Multi-Object Tracking and New Evaluation Metrics
 
 > paper: https://arxiv.org/pdf/2008.08063.pdf
@@ -57,12 +56,9 @@ tags: tracking MOT
 * E.状态管理：对于无法关联的目标检测结果$D_{match}$和轨迹信息$T_{unmatch}$需要转换为$T_{lost}$销毁，或者创建新的轨迹$T_{new}$用于跟踪
 
 
-
 ```
 总体而言，算法的流程与2DMOT基本一致
 ```
-
-
 
 ### 理论推导
 
@@ -72,7 +68,7 @@ tags: tracking MOT
 
 * 目标定义：对于某一帧$t$，通过雷达检测到`3D`目标的结果为$D = \{D^1_t,D^2_t...D^{n_t}_t\}$，其中$n_t$为目标的个数；而每个检测目标$D^j_t$，其中$j \in\{1,2...n_t\}$，而每个检测结果表示如下：$D^j_t = \{x,y,z,\theta,l,w,h,s\}$，其中，`3D`距离信息为$(x,y,z)$，`3D`尺度信息为$(l,w,h)$，此外还包含航向角$\theta$和置信度$s$
 
-* 状态定义：定义轨迹状态向量为$T=\{x,y,z,\theta,l,w,h,s,v_x,v_y,v_z\}$，相比于检测结果$D_t$多了对于目标速度的表示；对于每一帧而言，$t-1$时刻前的状态轨迹可以表示为$T_{t-1}=\{T^1_{t-1},T^2_{t-1}...T^{m-1}_{t-1}\}$，其中$m-1$为该时刻轨迹的数量
+* 状态定义：定义轨迹状态向量为$T=\{x,y,z,\theta,l,w,h,s,v_x,v_y,v_z\}$，相比于检测结果$D_t$多了对于目标速度的表示；对于每一帧而言，$t-1$时刻前的状态轨迹可以表示为$T_{t-1}=\{T^1_{t-1},T^2_{t-1}...T^{m-1}\_{t-1}\}$，其中$m-1$为该时刻轨迹的数量
 
 > 作者没有引入角速度$v_{\theta}$，因为实际计算发现影响不大
 
@@ -104,8 +100,6 @@ $$
 
 * 旧轨迹销毁：同样的，每个未匹配的轨迹$T_{unmatch}$，都有可能是旧目标刚刚退出场景，参考前面操作，对于$D^q_{unmatch},q \in (1,2...m_{t-1}-w_t)$在接下来的$Age_{max}$帧中都没有匹配的轨迹，此时销毁旧轨迹$T^q_{unmatch}$
 
-
-
 ### 3D MOT 评价指标
 
 以往`3D MOT` 评价方法往往是将`3D MOT` 的结果投影到图像平面，再通过`KITTI`数据集的`2D MOT`评价方法进行性能验证，而`KITTI`
@@ -123,8 +117,6 @@ $$
     * $MOTA=1-\frac{FP+FN+IDS}{num_{gt}}$，$num_{gt}$为该帧下真值目标的数量
     * $aMOTA=\frac{1}{L}*\displaystyle \sum_{r \in \{\frac{1}{L},\frac{2}{L}...1\}} \frac{FP_r+FN_r+IDS_r}{num_{gt}}$
 
-    
-
 * 缩放尺度矩阵(sAMOTA)：
 
   * $sAMOTA_r=\max(0,1-\frac{FP_r+FN_r+IDS_r-(1-r)\times num_{gt}}{r\times num_{gt}})$
@@ -132,11 +124,7 @@ $$
 
 > 总体而言，这些指标主要衡量算法对置信度阈值的敏感程度
 
-
-
 ## 实验
-
-
 
 ### 性能表现
 
