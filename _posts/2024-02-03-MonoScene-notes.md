@@ -2,7 +2,7 @@
 layout: post
 title: MonoScene
 thumbnail-img: /assets/static/YzNmbwez1oySHtxkZ7ycowPuntj.png
-tags: OccNets Mono-View
+tags: OccNets Mono-view
 ---
 
 # MonoScene

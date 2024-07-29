@@ -2,7 +2,7 @@
 layout: post
 title: RCM-Fusion
 thumbnail-img: /assets/static/RHzbbWG8Ro01zTxaHU5cYFSUnZf.png
-tags: BEV Perception Multi-view Multi-Module
+tags: BEV Perception Multi-view Multi-module
 ---
 # RCM-Fusion
 
