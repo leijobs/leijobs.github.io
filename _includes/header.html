@@ -56,6 +56,9 @@
   {% if page.cover-img %}<span class='img-desc'></span>{% endif %}
 </div>
 
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 {% if page.header-extra %}
   {% for file in page.header-extra %}
     {% include {{ file }} %}
