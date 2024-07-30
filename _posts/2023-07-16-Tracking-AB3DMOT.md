@@ -2,7 +2,7 @@
 layout: post
 title: 3D MOT--AB3DMOT
 thumbnail-img: /assets/post_assets/image-20230716172844563.png
-tags: tracking MOT
+tags: MOT
 ---
 
 #  AB3DMOT: A Baseline for 3D Multi-Object Tracking and New Evaluation Metrics
