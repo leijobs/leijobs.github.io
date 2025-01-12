@@ -2,7 +2,7 @@
 layout: post
 title: Ground-VIO
 thumbnail-img: /assets/static/KWxdbFwd1oCGONx9pLtczNC9n7d.png
-tags: SLAM
+tags: SLAM Mapping
 ---
 
 ## Info
