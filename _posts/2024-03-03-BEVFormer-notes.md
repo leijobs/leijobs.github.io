@@ -2,7 +2,7 @@
 layout: post
 title: BEVFormer
 thumbnail-img: /assets/static/C9nYbwLbMoX5Epx4j2Gcxw00nOg.png
-tags: BEV Transformer Perception Multi-view Temporal
+tags: BEV Perception Multi-view Temporal
 ---
 
 # BEVFormer
