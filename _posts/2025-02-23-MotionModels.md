@@ -192,8 +192,6 @@ $$
 >
 > $$
 > \mathbf{F}_d=\left[\begin{array}{lll}
-> $$
-
 1 & T & \frac{T^2}{2} \\
 0 & 1 & T \\
 0 & 0 & e^{-\alpha T}
@@ -205,8 +203,6 @@ $$
 >
 > $$
 > \mathbf{Q}_{k}=2 \alpha \sigma_{a}^{2}\left[\begin{array}{lll}
-> $$
-
 q_{11} & q_{12} & q_{13} \\
 q_{21} & q_{22} & q_{23} \\
 q_{31} & q_{32} & q_{33}
@@ -217,8 +213,6 @@ q_{31} & q_{32} & q_{33}
 >
 > $$
 > \begin{array}{rlr}
-> $$
-
 q_{11}=\frac{T^{b}}{20}, & q_{12}=\frac{T^{4}}{8}, & q_{13}=\frac{T^{3}}{6} \\
 q_{21}=\frac{T^{4}}{8}, & q_{22}=\frac{T^{3}}{3}, & q_{23}=\frac{T^{2}}{2} \\
 q_{31}=\frac{T^{3}}{6}, & q_{32}=\frac{T^{2}}{2}, & q_{33}=T
@@ -282,8 +276,6 @@ $$
 >
 > $$
 > \mathbf{F}_d=\begin{bmatrix}
-> $$
-
 1 & 0 & T & 0 & \frac{T^2}{2} & 0\\
 0 & 1 & 0 & T & 0 & \frac{T^2}{2}\\
 0 & 0 & 1 & 0 & T & 0 \\
@@ -298,8 +290,6 @@ $$
 >
 > $$
 > \mathbf{Q}_{k}= \sigma_{a}^{2}\left[\begin{array}{lll}
-> $$
-
 \frac{T^5}{20} & 0 & \frac{T^4}{8} & 0 & \frac{T^3}{6} & 0\\
 0 & \frac{T^5}{20} & 0 & \frac{T^4}{8} & 0 & \frac{T^3}{6}\\
 \frac{T^4}{8} & 0 & \frac{T^3}{3} & 0 & \frac{T^2}{2} & 0 \\
@@ -360,8 +350,6 @@ $$
 >
 > $$
 > \mathbf{f}(\mathbf{x}_k,\mathbf{u}_k)=
-> $$
-
 \begin{bmatrix}
 v_k\cos(\theta_k) \\
 v_k\sin(\theta_k) \\
